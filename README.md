@@ -1,23 +1,17 @@
-# ARCHVIZ RelateAnything QC v0.8
+# ARCHVIZ RelateAnything QC v0.8.2
 
-Smart BEFORE vs AFTER geometry QC for AI-assisted architectural visualization in ComfyUI.
+Rejection-aware BEFORE vs AFTER geometry QC for AI-assisted architectural visualization in ComfyUI.
 
-## v0.8
-- Hungarian assignment when SciPy is available
-- row/column clustering
-- normalized center + IoU + size + grid + neighborhood matching
-- separate Detection and Geometry statuses
-- visual overlay: GREEN matched, YELLOW drifted, RED missing, BLUE added
+## v0.8.2
+- normalized weighted cost (0..1 component penalties, divided by active weight sum)
+- rejection-aware Hungarian assignment with dummy unmatched slots
+- explicit `accept_match_cost` and `dummy_unmatched_cost`
+- `Geometry = NOT_EVALUATED` when reliable matches are insufficient
+- candidate/accepted cost diagnostics and reliable match fraction
+- visual overlay remains GREEN matched, YELLOW drifted, RED missing, BLUE added
 - RelateAnything semantic delta remains advisory only
 
-## Install
-Clone/copy this repository directly to:
-`Q:\AI_ArchViz\ComfyUI_windows_portable\ComfyUI\custom_nodes\ARCHVIZ-RelateAnything-QC-v0.8`
+## Defaults
+`accept_match_cost=0.55`, `dummy_unmatched_cost=0.35`, `min_reliable_match_fraction=0.50`.
 
-Keep `ComfyUI-RelateAnything-ONNX-v06` installed. Restart ComfyUI and search for:
-`RA · SMART BEFORE vs AFTER QC · v0.8`
-
-Import `workflows/ARCHVIZ_RELATEANYTHING_BEFORE_AFTER_QC_v008.json`.
-
-## Status logic
-Detection PASS/WARN/FAIL is based on unmatched regions. Geometry PASS/WARN/FAIL is based on deterministic bbox/grid drift and order flips. RA relations never decide geometry truth.
+Update existing install with `git pull`, restart ComfyUI, then search for `RA · SMART BEFORE vs AFTER QC · v0.8.2`.

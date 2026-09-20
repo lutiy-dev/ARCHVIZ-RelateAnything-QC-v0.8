@@ -1,5 +1,4 @@
-1. Keep ComfyUI-RelateAnything-ONNX-v06 installed.
-2. Clone/copy this repository directly to ComfyUI/custom_nodes/ARCHVIZ-RelateAnything-QC-v0.8
-3. Restart ComfyUI.
-4. Verify: RA · SMART BEFORE vs AFTER QC · v0.8
-5. Import workflows/ARCHVIZ_RELATEANYTHING_BEFORE_AFTER_QC_v008.json
+cd /d "Q:\AI_ArchViz\ComfyUI_windows_portable\ComfyUI\custom_nodes\ARCHVIZ-RelateAnything-QC-v0.8"
+git pull
+Restart ComfyUI.
+Search: RA · SMART BEFORE vs AFTER QC · v0.8.2

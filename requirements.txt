@@ -1,3 +1,2 @@
 # No mandatory new heavy dependencies.
-# SciPy is optional. If present, Hungarian assignment is used.
-# Otherwise the node uses a deterministic greedy fallback.
+# SciPy is optional; if present, rejection-aware Hungarian assignment is used.
